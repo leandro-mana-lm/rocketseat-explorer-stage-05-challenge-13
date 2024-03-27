@@ -1,0 +1,190 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-base-black: #000000;
+  --color-base-blue-700: #34355b;
+  --color-base-blue-800: #190361;
+  --color-base-gray-100: #e4edf1;
+  --color-base-gray-600: #555555;
+  --color-base-orange: #ff9500;
+  --color-base-purple: #bb00ff;
+  --color-base-white: #ffffff;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  animation: gradient 10s ease infinite;
+
+  background: linear-gradient(
+    45deg,
+    var(--color-base-blue-800),
+    var(--color-base-purple)
+  );
+  background-size: 200% 200%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.6rem;
+
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.container {
+  background-color: var(--color-base-white);
+
+  border-radius: 5px;
+  box-shadow: 0 2rem 5rem var(--color-base-black);
+
+  height: 42.8rem;
+  width: 42.4rem;
+
+  padding: 6.4rem;
+}
+
+.content {
+  text-align: center;
+
+  position: relative;
+}
+
+.title {
+  color: var(--color-base-blue-700);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+
+  margin-bottom: 1.6rem;
+}
+
+.subtitle {
+  color: var(--color-base-blue-700);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+
+  margin-bottom: 2rem;
+}
+
+#fortune-cookie:hover {
+  animation: shake 500ms infinite;
+
+  cursor: pointer;
+}
+
+@keyframes shake {
+  12.5% {
+    transform: translateX(5px) rotate(5deg);
+  }
+
+  25% {
+    transform: translateX(0);
+  }
+
+  37.5% {
+    transform: translateY(5px);
+  }
+
+  50%,
+  75% {
+    transform: translateY(0);
+  }
+
+  62.5% {
+    transform: translateY(-5px);
+  }
+
+  87.5% {
+    transform: translateX(-5px) rotate(-5deg);
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.fortune {
+  animation-name: appear;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+  background-color: var(--color-base-gray-100);
+  box-shadow: 0.2rem 0.2rem 0.2rem var(--color-base-gray-600);
+
+  color: var(--color-base-black);
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.4rem;
+  font-weight: 400;
+
+  padding: 1rem;
+
+  position: absolute;
+  bottom: 10rem;
+
+  transform: scale(0);
+
+  width: 100%;
+}
+
+@keyframes appear {
+  50% {
+    bottom: 20rem;
+
+    transform: scale(0.5);
+  }
+
+  100% {
+    bottom: 25rem;
+
+    transform: scale(1);
+  }
+}
+
+#opened-cookie {
+  margin-top: 14.1rem;
+}
+
+.btn {
+  background-color: var(--color-base-orange);
+
+  border: none;
+  border-radius: 4px;
+
+  color: var(--color-base-white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.5rem;
+
+  padding: 1.6rem;
+
+  transition: 0.5s;
+}
+
+.btn:hover {
+  filter: brightness(0.8);
+}
+
+.result {
+  min-height: 60rem;
+  width: 42.8rem;
+}
